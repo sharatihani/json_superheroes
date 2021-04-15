@@ -47,6 +47,7 @@ let jsonDatabase = [
 
 for (var i = 0; i < jsonDatabase.length; i++) {
   createElement(jsonDatabase[i]);
+  AOS.init();
 }
 
 function createElement(incomingJSON) {
@@ -55,6 +56,9 @@ function createElement(incomingJSON) {
   let newContentElement = document.createElement("DIV");
   newContentElement.style.backgroundColor = incomingJSON['bg_color'];
   newContentElement.classList.add('contentItem');
+
+  newContentElement.setAttribute('data-aos', 'flip-left');
+  newContentElement.setAttribute('data-aos-duration', '1500');
 
   // creates h3 headline for name, set class & set content
   let newContentHeading = document.createElement("H3");
